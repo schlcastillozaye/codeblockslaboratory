@@ -1,0 +1,11 @@
+# Protect private application folders if the project root is exposed by Apache.
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(app|config|database|docs|tests)(/|$) - [R=404,L,NC]
+</IfModule>
+
+<FilesMatch "^(\.env|composer\.(json|lock)|README\.md|.*\.sql|.*\.log)$">
+    Require all denied
+</FilesMatch>

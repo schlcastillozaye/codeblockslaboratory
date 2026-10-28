@@ -1,0 +1,15 @@
+# Pretty URLs for Apache/XAMPP.
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+# Security headers are emitted by app/bootstrap.php so every response has one
+# consistent value. Do not duplicate them here, because Apache would append a
+# second copy and some clients collapse the values.
+
+

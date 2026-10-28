@@ -1,0 +1,24 @@
+# Local configuration overrides
+config/config.local.php
+
+# Provided course materials (not project source)
+IT302_Activity1_CastilloKashiecaZaye.pdf
+IT302_Final_Project_Integrated_Testing_Portfolio_Instructions_Rubric.pdf
+IT302_Final_Project_Student_Guide.pdf
+
+# Uploads
+public/uploads/*
+!public/uploads/.htaccess
+
+# Temporary / generated
+*.log
+tests/regression/evidence/
+tests/selenium/evidence/
+tests/selenium/__pycache__/
+tests/regression/__pycache__/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

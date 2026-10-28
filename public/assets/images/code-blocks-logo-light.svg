@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 72" role="img" aria-labelledby="cbTitleD cbDescD">
+  <title id="cbTitleD">Code Blocks Laboratory Equipment Borrowing</title>
+  <desc id="cbDescD">A navy and teal mark combining a laboratory flask, code brackets, equipment blocks, and a return arrow.</desc>
+  <defs>
+    <linearGradient id="markBgD" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173E67"/><stop offset="1" stop-color="#087B82"/></linearGradient>
+    <linearGradient id="flaskD" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#A7E8E0"/></linearGradient>
+  </defs>
+  <g transform="translate(4 4)">
+    <rect width="64" height="64" rx="18" fill="url(#markBgD)"/>
+    <rect x="9" y="9" width="46" height="46" rx="13" fill="#FFFFFF" fill-opacity=".07" stroke="#FFFFFF" stroke-opacity=".18"/>
+    <path d="M25 19v13l-8 13c-2 3 .1 7 3.8 7h22.4c3.7 0 5.8-4 3.8-7l-8-13V19" fill="url(#flaskD)" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M21 43h22M29 19h6" fill="none" stroke="#68DECF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M29 38h10l-2 5H31z" fill="#27B8B3"/>
+    <circle cx="27" cy="47" r="1.5" fill="#173B6C"/><circle cx="35" cy="46" r="1" fill="#173B6C"/>
+    <path d="M15 14h-4v4M49 14h4v4M15 50h-4v-4M49 50h4v-4" fill="none" stroke="#93C5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Segoe UI, Arial, Helvetica, sans-serif">
+    <text x="82" y="39" font-size="30" font-weight="760" letter-spacing="-1.15" fill="#F7FAFF">Code</text>
+    <text x="157" y="39" font-size="30" font-weight="760" letter-spacing="-1.15" fill="#67E0D2">Blocks</text>
+    <text x="84" y="58" font-size="9.5" font-weight="700" letter-spacing="2.15" fill="#AEC0D5">LABORATORY BORROWING</text>
+  </g>
+</svg>

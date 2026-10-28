@@ -9,9 +9,10 @@
 --   Instructor    : maria.santos@codeblocks.test / Instructor@12345
 --   Student       : juan.delacruz@codeblocks.test / Student@12345
 --   Student       : ana.reyes@codeblocks.test   / Student@12345
+--
+-- Import into the target database selected in phpMyAdmin. This file resets
+-- the demo tables and must not be used on a database containing real data.
 -- ============================================================================
-
-USE `codeblocks_lab_inventory`;
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;

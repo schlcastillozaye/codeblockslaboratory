@@ -97,6 +97,11 @@ try {
         fwrite(STDOUT, "Dropped existing database `{$name}` (if present).\n");
     }
 
+    $pdo->exec(
+        "CREATE DATABASE IF NOT EXISTS `{$name}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
+    );
+    $pdo->exec("USE `{$name}`");
+
     $schemaFile = BASE_PATH . '/database/schema.sql';
     $statements = splitSqlFile($schemaFile);
     foreach ($statements as $index => $statement) {

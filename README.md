@@ -64,6 +64,69 @@ If MySQL runs on a different port, copy `config/config.local.example.php` to
 `config/config.local.php` (or edit `config/config.php`) and set the port. The
 acceptance and Selenium runners accept `--db-port` as well.
 
+## Deploying to InfinityFree
+
+GitHub Pages cannot run this application's PHP backend or MySQL database. The
+repository can be hosted on a PHP/MySQL provider such as InfinityFree; the
+source repository itself is not a running website.
+
+The current InfinityFree File Manager location for this project is
+`/htdocs/codeblocks-lab-inventory/`. Upload the project contents there, keeping
+the `app/`, `config/`, `database/`, and `public/` folders together. The
+application entry point is in `public/`; after setup, open:
+
+`https://codeblockslaboratory.freepage.cc/codeblocks-lab-inventory/public/login`
+
+### Configure the database
+
+1. In the InfinityFree control panel, create a MySQL database and note the
+   assigned database host, database name, username, and password. Use the
+   exact values shown there; hosted database names and users are usually
+   prefixed and differ from the local XAMPP defaults.
+2. Open that database in phpMyAdmin and select it before importing.
+3. Import `database/schema.sql`, followed by `database/seed.sql`. The SQL files
+   operate on the selected database and do not try to create an unprefixed
+   database. **The seed file deletes existing rows from the demo tables**; do
+   not import it into a database with real data.
+4. In File Manager, create
+   `/htdocs/codeblocks-lab-inventory/config/config.local.php` with the
+   following settings, replacing all database placeholders with the values
+   from the hosting control panel:
+
+   ```php
+   <?php
+   return [
+       'app' => [
+           'url' => 'https://codeblockslaboratory.freepage.cc/codeblocks-lab-inventory/public',
+           'env' => 'production',
+           'debug' => false,
+           'pretty_urls' => true,
+           'show_demo_credentials' => false,
+       ],
+       'db' => [
+           'host' => 'YOUR_ASSIGNED_MYSQL_HOST',
+           'port' => '3306',
+           'name' => 'YOUR_ASSIGNED_DATABASE_NAME',
+           'user' => 'YOUR_ASSIGNED_DATABASE_USERNAME',
+           'password' => 'YOUR_DATABASE_PASSWORD',
+           'charset' => 'utf8mb4',
+       ],
+   ];
+   ```
+
+   Keep this file private and do not commit it. The repository ignores
+   `config/config.local.php`.
+5. Test the login page above. The URL in `app.url` must include the
+   `/codeblocks-lab-inventory/public` path for this folder layout; leaving it
+   at the domain root makes the router generate links that do not match the
+   installed application path.
+6. Change or remove the seeded demo accounts before public use. Their
+   credentials are listed above and are intended only for classroom testing.
+
+Use the hosting provider's FTP/File Manager and database control panel for
+secrets. Do not send database passwords or FTP credentials in chat or store
+them in the public repository.
+
 ## Demo accounts
 
 | Role | Email | Password | Notes |

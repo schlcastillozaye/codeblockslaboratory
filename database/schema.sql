@@ -1,7 +1,7 @@
 -- ============================================================================
 -- Code Blocks Laboratory Equipment Borrowing System - Laboratory Equipment Inventory and Borrowing Management System
 -- Database schema (MySQL 8+ / MariaDB 10.4+)
--- Database: codeblocks_lab_inventory
+-- Import into the target database selected in phpMyAdmin.
 --
 -- Quantity model (enforced by CHECK + application services):
 --   total_quantity = available_quantity + borrowed_quantity
@@ -11,12 +11,6 @@
 
 SET NAMES utf8mb4;
 SET time_zone = '+08:00';
-
-CREATE DATABASE IF NOT EXISTS `codeblocks_lab_inventory`
-    CHARACTER SET utf8mb4
-    COLLATE utf8mb4_unicode_ci;
-
-USE `codeblocks_lab_inventory`;
 
 -- ---------------------------------------------------------------------------
 -- Users and authentication
